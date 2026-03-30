@@ -1,0 +1,14 @@
+{
+  "name": "goal-reminder",
+  "owner": {
+    "name": "Germini0610",
+    "url": "https://github.com/Germini0610"
+  },
+  "plugins": [
+    {
+      "name": "goal-reminder",
+      "source": "./",
+      "description": "將你的原始需求固定顯示在 Terminal 底部 Status Line，避免長任務中忘記目標"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+current_goal.txt
+session_id.txt
+__pycache__/
+*.pyc

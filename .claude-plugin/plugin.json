@@ -1,0 +1,23 @@
+{
+  "name": "goal-reminder",
+  "version": "1.0.0",
+  "description": "將你的原始需求固定顯示在 Terminal 底部 Status Line，避免長任務中忘記目標",
+  "author": "you",
+  "hooks": [
+    {
+      "event": "UserPromptSubmit",
+      "command": "python3 ~/.claude/plugins/goal-reminder/hooks/capture_goal.py"
+    }
+  ],
+  "commands": [
+    {
+      "name": "goal",
+      "description": "設定或顯示當前目標。用法：/goal <你的需求>  或  /goal clear",
+      "bash": "python3 ~/.claude/plugins/goal-reminder/commands/goal_cmd.py \"$ARGUMENTS\""
+    }
+  ],
+  "statusLine": {
+    "type": "command",
+    "command": "python3 ~/.claude/plugins/goal-reminder/hooks/status_line.py"
+  }
+}
