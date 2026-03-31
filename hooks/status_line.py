@@ -6,12 +6,17 @@ Status Line：持續在 Terminal 底部顯示當前目標
 """
 import os
 
-GOAL_FILE = os.path.expanduser("~/.claude/plugins/goal-reminder/current_goal.txt")
+GOAL_DIR = os.path.expanduser("~/.claude/plugins/goal-reminder/sessions")
+
+def get_goal_file():
+    session_id = os.environ.get("CLAUDE_SESSION_ID", "default")
+    return os.path.join(GOAL_DIR, f"{session_id}.txt")
 
 def main():
-    if os.path.exists(GOAL_FILE):
+    goal_file = get_goal_file()
+    if os.path.exists(goal_file):
         try:
-            with open(GOAL_FILE, "r", encoding="utf-8") as f:
+            with open(goal_file, "r", encoding="utf-8") as f:
                 goal = f.read().strip()
             if goal:
                 print(f"🎯 目標: {goal}")
