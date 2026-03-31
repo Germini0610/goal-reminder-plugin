@@ -15,10 +15,10 @@
 
 ## 安裝步驟
 
-### 1. 複製 plugin 到 Claude 設定目錄
+### 1. Clone plugin 到 Claude 設定目錄
 
 ```bash
-cp -r goal-reminder ~/.claude/plugins/goal-reminder
+git clone https://github.com/Germini0610/goal-reminder-plugin.git ~/.claude/plugins/goal-reminder
 ```
 
 ### 2. 加入 Plugin Marketplace（本地）
@@ -90,6 +90,14 @@ goal-reminder/
 │   └── goal_cmd.py          # /goal 指令處理
 └── README.md
 ```
+
+## 更新
+
+```bash
+cd ~/.claude/plugins/goal-reminder && git pull
+```
+
+更新後在 Claude Code 執行 `/reload-plugins` 套用變更。
 
 ## 需求
 
