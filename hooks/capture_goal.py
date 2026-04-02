@@ -32,7 +32,8 @@ def main():
 
     # 每次都覆蓋，永遠顯示最新的 prompt（per session）
     os.makedirs(GOAL_DIR, exist_ok=True)
-    goal_text = prompt if len(prompt) <= 120 else prompt[:117] + "..."
+    first_line = prompt.splitlines()[0].strip()
+    goal_text = first_line if len(first_line) <= 80 else first_line[:77] + "..."
     with open(get_goal_file(session_id), "w", encoding="utf-8") as f:
         f.write(goal_text)
 
